@@ -21,9 +21,10 @@ public class Rover {
 		this.orientation = orientation;
 	}
 	
-	public Rover(int id, int coordX, int coordY){
+	public Rover(int id, int coordX, int coordY, String orientation){
 		this.id = id;
 		this.coordinate = new Coordinate(coordX, coordY);
+		this.orientation = orientation;
 	}
 
 	public int getId() {

@@ -14,7 +14,6 @@ public class Environment {
 	private int[][] size;
 
 	public Environment(String name, int sizeX, int sizeY) {
-		super();
 		this.name = name;
 		this.size = new int[sizeX][sizeY];
 	}
