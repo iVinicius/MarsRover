@@ -19,9 +19,16 @@ public class Console {
 		ArrayList<Rover> rovers = new ArrayList<>();
 		ArrayList<Task> tasks = new ArrayList<>();
 		
-		FileReader.readFile("input.txt", env, rovers, tasks);
+		env = FileReader.readFile("input.txt", rovers, tasks);
 		
-		String xx = "";
+		NASACommandCenter commandCenter = new NASACommandCenter();
+		
+		commandCenter.deployRovers(rovers, env);
+		commandCenter.setMission(tasks);
+		
+		commandCenter.runMission();
+		
+		System.out.println(commandCenter.printEnvironmentMap());
 	}
 
 }

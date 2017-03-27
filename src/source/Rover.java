@@ -50,16 +50,17 @@ public class Rover {
 	public void setOrientation(String orientation) {
 		this.orientation = orientation;
 	}
-
-	public boolean move(){
-		return false;
+	
+	public void move(int x, int y){
+		coordinate.moveX(x);
+		coordinate.moveY(y);
 	}
 	
-	public void turnLeft(){
+	public String toString(){
+		String aux = "RoverId: " + id + "\n";
 		
-	}
-	
-	public void turnRight(){
+		aux += coordinate.toString() + " : " + orientation;
 		
+		return aux;
 	}
 }

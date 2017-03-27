@@ -41,4 +41,12 @@ public class Coordinate {
 		
 		return aux;
 	}
+	
+	public void moveX(int x){
+		this.x += x;
+	}
+	
+	public void moveY(int y){
+		this.y += y;
+	}
 }

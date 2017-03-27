@@ -11,11 +11,11 @@ public class Environment {
 	
 	private String name;
 	
-	private int[][] size;
+	private int[][] environment;
 
 	public Environment(String name, int sizeX, int sizeY) {
 		this.name = name;
-		this.size = new int[sizeX][sizeY];
+		this.environment = new int[sizeX][sizeY];
 	}
 
 	public String getName() {
@@ -26,11 +26,11 @@ public class Environment {
 		this.name = name;
 	}
 
-	public int[][] getSize() {
-		return size;
+	public int[][] getEnvironment() {
+		return environment;
 	}
 
-	public void setSize(int[][] size) {
-		this.size = size;
+	public void setEnvironment(int[][] size) {
+		this.environment = size;
 	}
 }

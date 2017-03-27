@@ -17,8 +17,8 @@ import java.util.stream.Stream;
  */
 public class FileReader {
 
-	public static void readFile(String fileName, Environment env, ArrayList<Rover> rovers, ArrayList<Task> tasks){
-		//read file into stream, try-with-resources		
+	public static Environment readFile(String fileName, ArrayList<Rover> rovers, ArrayList<Task> tasks){
+		Environment env = null;	
 		try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 			List<String> lines = new ArrayList<>();
 			lines = stream.collect(Collectors.toList());
@@ -47,6 +47,7 @@ public class FileReader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return env;
 	}
 	
 	private static boolean isEven(int i){
