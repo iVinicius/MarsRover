@@ -93,6 +93,7 @@ public class NASACommandCenter implements INASACommandCenter{
 				this.runCommand(commands[i], rover);
 				System.out.println(rover.toString());
 			}
+			String x = "";
 		}
 		System.out.println(this.printEnvironmentMap());
 		

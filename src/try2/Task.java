@@ -1,0 +1,45 @@
+/**
+ * 
+ */
+package try2;
+
+import java.util.ArrayList;
+
+/**
+ * @author Vinicius_B_Rosa
+ *
+ */
+public class Task {
+
+	private int targetId;
+	
+	private ArrayList<Instruction> commands;
+
+	public int getTargetId() {
+		return targetId;
+	}
+
+	public void setTargetId(int targetId) {
+		this.targetId = targetId;
+	}
+
+	public ArrayList<Instruction> getCommands() {
+		return commands;
+	}
+	
+	public void addInstruction(String instr){
+		commands.add(this.parseIntruction(instr));
+	}
+	
+	private Instruction parseIntruction(String str){
+		switch(str){
+		case "L":
+			return Instruction.TURN_LEFT;
+		case "R":
+			return Instruction.TURN_RIGHT;
+		case "M":
+			return Instruction.MOVE;
+		}
+		return null;
+	}
+}
