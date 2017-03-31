@@ -57,9 +57,13 @@ public class Environment {
 		for(Marking m : markings){
 			if(m.getId() == id){
 				aux = m;
-			}
-			break;
+				break;
+			}		
 		}		
 		return aux;
+	}
+	
+	public String printMap(){
+		return map.toString();
 	}
 }

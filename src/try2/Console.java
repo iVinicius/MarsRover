@@ -5,23 +5,7 @@ import java.util.List;
 
 public class Console {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Map map = new Map(5,5);
-		
-		map.mark(1, 2);
-		
-		System.out.println(map.toString());
-		
-		Marking markRover1 = new Marking(1, 2, 1, "1");
-		Marking markRover2 = new Marking(3, 3, 2, "2");
-		
-		Environment envTest = new Environment("Mars Plateau", 5, 5);
-		envTest.addMarking(markRover1);
-		envTest.addMarking(markRover2);
-		
-		System.out.println(envTest.getMap().toString());
-		
+	public static void main(String[] args) {	
 		List<String> lines = FileReader.readFile("input.txt");
 		
 		Mission mission = null;
@@ -54,7 +38,13 @@ public class Console {
 			lineCount++;
 		}
 		
+		mission = new Mission(rovers, tasks, env);
 		
+		System.out.println(mission.printEnvironment());
+		
+		mission.runMission();
+		
+		System.out.println(mission.printEnvironment());
 	}
 	
 	private static boolean isEven(int x){

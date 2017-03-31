@@ -56,7 +56,51 @@ public class Rover {
 		this.orientation = orientation;
 	}
 	
-	public void turnLeft(){
-		//orientation = Compass.
+	public void executeAction(Instruction instr){
+		switch(instr){
+		case TURN_LEFT:
+			this.turnLeft();
+			break;
+		case TURN_RIGHT:
+			this.turnRight();
+			break;
+		case MOVE:
+			this.move();
+			break;
+		}
+	}
+	
+	private void turnLeft(){
+		orientation = Compass.getLeft(orientation);
+	}
+	
+	private void turnRight(){
+		orientation = Compass.getRight(orientation);
+	}
+	
+	private void move(){
+		switch(orientation){
+		case NORTH:
+			y++;
+			break;
+		case SOUTH:
+			y--;
+			break;
+		case EAST:
+			x++;
+			break;
+		case WEST:
+			x--;
+			break;
+		}
+	}
+	
+	@Override
+	public String toString(){
+		return "RoverId: " + id + "(" + x + ", " + y + ") " + orientation;
+	}
+	
+	public String printCoordenation(){
+		return this.toString();
 	}
 }

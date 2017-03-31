@@ -24,7 +24,17 @@ public class Compass {
 		hashDirections.put(Orientation.EAST, new CardinalPair(Orientation.NORTH, Orientation.SOUTH));
 	}
 	
-	public static class CardinalPair {
+	public static Orientation getRight(Orientation originalOrientation){
+		CardinalPair cp = hashDirections.get(originalOrientation);
+		return cp.getRight();
+	}
+	
+	public static Orientation getLeft(Orientation originalOrientation){
+		CardinalPair cp = hashDirections.get(originalOrientation);
+		return cp.getLeft();
+	}
+	
+	private static class CardinalPair {
 
 		private Orientation leftDirection;
 		private Orientation rightDirection;

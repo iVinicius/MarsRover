@@ -51,6 +51,10 @@ public class Map {
 	}
 	
 	public void eraseMarking(int x, int y){
+		if(x < 0) x = 0;
+		if(x > map.length-1) x = map.length-1;
+		if(y < 0) y = 0;
+		if(y > map[x].length-1) y = map[x].length-1;
 		this.set(x, y, EMPTY_MARK);
 	}
 }

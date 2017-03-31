@@ -21,10 +21,15 @@ public class Mission {
 		this.rovers = rovers;
 		this.tasks = tasks;
 		this.environment = environment;
+		this.setupEnvironment();
+	}
+	
+	public String printEnvironment(){
+		return environment.printMap();
 	}
 
 	public void runMission(){
-		this.setupEnvironment();
+		this.runTasks();
 	}
 	
 	private void setupEnvironment(){
@@ -38,7 +43,9 @@ public class Mission {
 		for(Task task : tasks){
 			target = this.findRover(task.getTargetId());
 			for(Instruction instr : task.getCommands()){
-				
+				target.executeAction(instr);
+				environment.updateMarking(target.getId(), target.getX(), target.getY());
+				System.out.println(target.printCoordenation());
 			}
 		}
 	}
