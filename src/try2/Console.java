@@ -1,5 +1,6 @@
 package try2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,12 @@ public class Console {
 		} else{
 			filename = "input.txt";
 		}
-		List<String> lines = FileReader.readFile(filename);
+		List<String> lines = null;
+		try{
+			lines = FileReader.readFile(filename);
+		} catch(IOException e){
+			return;
+		}		
 		
 		Mission mission = null;
 		Environment env = null;		

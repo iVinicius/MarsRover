@@ -19,6 +19,11 @@ public class Task {
 		targetId = 0;
 		commands = new ArrayList<>();
 	}
+	
+	public Task(int targetId, ArrayList<Instruction> inst){
+		this.targetId = targetId;
+		commands = inst;
+	}
 
 	public int getTargetId() {
 		return targetId;

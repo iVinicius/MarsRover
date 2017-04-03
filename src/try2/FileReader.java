@@ -17,12 +17,13 @@ import java.util.stream.Stream;
  */
 public class FileReader {
 
-	public static List<String> readFile(String fileName){
+	public static List<String> readFile(String fileName) throws IOException{
 		List<String> lines = new ArrayList<>();
 		try (Stream<String> stream = Files.lines(Paths.get(fileName))) {			
 			lines = stream.collect(Collectors.toList());
 		} catch (IOException e) {
 			e.printStackTrace();
+			throw e;
 		}
 		return lines;
 	}
