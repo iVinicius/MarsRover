@@ -70,15 +70,15 @@ public class Rover {
 		}
 	}
 	
-	private void turnLeft(){
+	public void turnLeft(){
 		orientation = Compass.getLeft(orientation);
 	}
 	
-	private void turnRight(){
+	public void turnRight(){
 		orientation = Compass.getRight(orientation);
 	}
 	
-	private void move(){
+	public void move(){
 		switch(orientation){
 		case NORTH:
 			y++;
@@ -97,7 +97,7 @@ public class Rover {
 	
 	@Override
 	public String toString(){
-		return "RoverId: " + id + "(" + x + ", " + y + ") " + orientation;
+		return "RoverId: " + id + " (" + x + ", " + y + ") " + orientation;
 	}
 	
 	public String printCoordenation(){

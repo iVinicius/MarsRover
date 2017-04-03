@@ -5,8 +5,14 @@ import java.util.List;
 
 public class Console {
 
-	public static void main(String[] args) {	
-		List<String> lines = FileReader.readFile("input.txt");
+	public static void main(String[] args) {
+		String filename = "";
+		if(args[0] != null){
+			filename = args[0];
+		} else{
+			filename = "input.txt";
+		}
+		List<String> lines = FileReader.readFile(filename);
 		
 		Mission mission = null;
 		Environment env = null;		
@@ -40,11 +46,13 @@ public class Console {
 		
 		mission = new Mission(rovers, tasks, env);
 		
-		System.out.println(mission.printEnvironment());
+		//System.out.println(mission.printEnvironment());
 		
 		mission.runMission();
 		
-		System.out.println(mission.printEnvironment());
+		System.out.println(mission.returnOutput());
+		
+		//System.out.println(mission.printEnvironment());
 	}
 	
 	private static boolean isEven(int x){

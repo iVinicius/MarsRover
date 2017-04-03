@@ -44,8 +44,8 @@ public class Mission {
 			target = this.findRover(task.getTargetId());
 			for(Instruction instr : task.getCommands()){
 				target.executeAction(instr);
-				environment.updateMarking(target.getId(), target.getX(), target.getY());
-				System.out.println(target.printCoordenation());
+				//environment.updateMarking(target.getId(), target.getX(), target.getY());
+				//System.out.println(target.printCoordenation());
 			}
 		}
 	}
@@ -57,5 +57,15 @@ public class Mission {
 			}
 		}
 		return null;
+	}
+	
+	public String returnOutput(){
+		String aux = "";
+		
+		for(Rover r : rovers){
+			aux+= r.getX() + " " + r.getY() + " " + Orientation.getChar(r.getOrientation()) + "\n";
+		}
+		
+		return aux;
 	}
 }
